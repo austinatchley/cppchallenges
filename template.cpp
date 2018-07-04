@@ -4,7 +4,7 @@
 #include <cctype>
 #include <cstring>
 
-std::string fn(const std::string& input)
+std::string fn(const std::string &input)
 {
     return "";
 }

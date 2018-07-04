@@ -4,15 +4,14 @@
 #include <cctype>
 #include <cstring>
 
-std::string validate_isbn(const std::string& input)
+std::string validate_isbn(const std::string &input)
 {
     if (input.size() != 10 || std::count_if(input.begin(), input.end(), isdigit) != 10)
         return "Invalid";
 
     unsigned int w = 10;
     auto sum = std::accumulate(input.begin(), input.end(), 0,
-        [&w] (int const total, char const c)
-        {
+        [&w](int const total, char const c) {
             return total + (w-- * (c - '0'));
         });
 
@@ -32,5 +31,5 @@ int main()
     auto output = validate_isbn(input);
 
     cout << "Output = " << output << endl;
-    cin >> input;
+    system("pause");
 }

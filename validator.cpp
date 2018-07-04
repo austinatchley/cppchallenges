@@ -9,7 +9,7 @@ class password_validator
 {
   public:
     virtual bool validate(std::string_view password) = 0;
-    virtual ~password_validator() {};
+    virtual ~password_validator(){};
 };
 
 class length_validator
@@ -107,12 +107,12 @@ class case_validator_decorator final
         bool upper = false, lower = false;
 
         std::for_each(password.begin(), password.end(),
-                      [&upper, &lower](const char c) {
-                          if (islower(c))
-                              lower = true;
-                          else if (isupper(c))
-                              upper = true;
-                      });
+            [&upper, &lower](const char c) {
+                if (islower(c))
+                    lower = true;
+                else if (isupper(c))
+                    upper = true;
+            });
 
         return upper && lower;
     }
