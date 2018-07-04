@@ -1,18 +1,26 @@
 #include <iostream>
+#include <algorithm>
+#include <numeric>
+#include <cctype>
+#include <cstring>
+
+std::string fn(const std::string& input)
+{
+    return "";
+}
 
 int main()
 {
     using namespace std;
-    unsigned int limit = 0;
-    cout << "Upper limit:";
-    cin >> limit;
 
-    unsigned long long sum = 0;
-    for (unsigned int i = 3; i < limit; ++i)
-    {
-        if (i % 3 == 0 || i % 5 == 0)
-            sum += i;
-    }
-    cout << "sum = " << sum << endl;
-    cin >> limit;
+    string input;
+    string prompt = "";
+
+    cout << prompt;
+    cin >> input;
+
+    auto output = fn(input);
+
+    cout << "Output = " << output << endl;
+    system("pause");
 }
